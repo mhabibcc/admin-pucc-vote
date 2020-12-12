@@ -246,6 +246,11 @@ return [
             'text'  => 'Data Pengguna',
             'url'   => 'users',
             'icon'  => 'fas fa-users'
+        ],
+        [
+            'text'  => 'Data Akun Admin',
+            'url'   => 'admins',
+            'icon'  => 'fas fa-users-cog'
         ]
     ],
 
