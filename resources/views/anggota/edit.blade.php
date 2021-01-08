@@ -19,22 +19,24 @@
     </div>
     <!-- /.card-header -->
     <div class="card-body">
-        <form action="" method="post">
+        <form action="{{route('anggota.edit.save')}}" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{base64_encode($anggota->id)}}">
             <div class="mb-3">
                 <label for="name" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="name" placeholder="Misal : Muhammad Habib" value="{{$anggota->nama}}">
+                <input type="text" class="form-control" id="name" placeholder="Misal : Muhammad Habib" value="{{$anggota->nama}}" name="nama">
             </div>
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Misal : habib" value="{{$anggota->username}}">
+                <input type="text" class="form-control" id="username" placeholder="Misal : habib" value="{{$anggota->username}}" name="username">
             </div>
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" placeholder="Misal : habib@example.com" value="{{$anggota->email}}">
+                <input type="email" class="form-control" id="email" placeholder="Misal : habib@example.com" value="{{$anggota->email}}" name="email">
             </div>
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="kosongkan jika tidak ingin mengganti">
+                <input type="password" class="form-control" id="password" placeholder="kosongkan jika tidak ingin mengganti" name="password">
             </div>
             <button type="submit" class="btn btn-primary">Simpan</button>
         </form>
